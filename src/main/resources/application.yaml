@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/testgraphql
+    username: root
+    password: Password@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  config:
+    location: "db/changelog/db.changelog-master.yaml"
+    enable: true

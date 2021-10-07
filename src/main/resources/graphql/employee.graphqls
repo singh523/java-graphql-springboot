@@ -1,0 +1,34 @@
+extend type QueryResolver {
+  employees: [Employee]
+  employee(id: ID!): Employee!
+}
+
+extend type MutationResolver {
+  newEmployee(employee: EmployeeDto!): Employee
+}
+
+input EmployeeDto {
+  firstName: String!
+  lastName: String!
+  position: String!
+  salary: Int
+  age: Int
+  organizationId: Int!
+  departmentId: Int!
+}
+
+type Employee {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  position: String!
+  salary: Int
+  age: Int
+  department: Department
+  organization: Organization
+}
+
+schema {
+  query: QueryResolver
+  mutation: MutationResolver
+}

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: createTable
+      author: vijay
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            path: 01-create-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
